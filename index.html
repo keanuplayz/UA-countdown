@@ -1,20 +1,214 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown</title>
+<html lang="en"
+  class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths not-safari"
+  id="">
 
-    <link rel="stylesheet" href="index.css">
-    <script src="script.js"></script>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://www.bd.keanucode.ml/">
+  <title>Birthday countdown</title>
+
+
+  <meta name="description"
+    content="What would you do if you had a birthday every year? Would you tell people about it and let them set a reminder? Or would you make a website that shows a countdown?">
+  <meta property="og:title" content="keanucode | Birthday">
+  <meta property="og:description"
+    content="What would you do if you had a birthday every year? Would you tell people about it and let them set a reminder? Or would you make a website that shows a countdown?">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.bd.keanucode.ml/">
+  <meta property="og:image"
+    content="UA.png">
+  <meta property="og:site_name" content="keanucode | Birthday">
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="keanucode | Birthday">
+  <meta name="twitter:image"
+    content="UA.png">
+  <meta name="twitter:description"
+    content="What would you do if you had a birthday every year? Would you tell people about it and let them set a reminder? Or would you make a website that shows a countdown?">
+
+
+  <meta name="theme-color" content="#000">
+
+  <link rel="icon" type="image/png"
+    href="UA.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/brands.css" integrity=""
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/solid.css" integrity=""
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity=""
+    crossorigin="anonymous">
+
+  <link href="https://cdn.shopify.com/s/files/1/0509/6685/5851/t/7/assets/theme.css?v=13412098517624499301"
+    rel="stylesheet" type="text/css" media="screen">
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/barba.js/1.0.0/barba.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js">
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/unveil2/2.0.8/jquery.unveil2.min.js">
+  </script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+
+  <script src="https://cdn.shopify.com/s/files/1/0509/6685/5851/t/7/assets/glasscase.js?v=7666981692861046848"
+    type="text/javascript"></script>
+  <script src="https://cdn.shopify.com/s/files/1/0509/6685/5851/t/7/assets/theme.js?v=13754328905108879892"
+    type="text/javascript"></script>
 </head>
-<body>
-    <div class="counter">
-        <p id="days"></p>
-        <p id="hours"></p>
-        <p id="mins"></p>
-        <p id="secs"></p>
-        <h2 id="end"></h2>
+
+<body id="index" class="loading">
+  <style type="text/css">
+    body {
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+      /*min-width:800px !important;*/
+    }
+  </style>
+
+  <!-- Text at the top of the site -->
+  <div class="topbar">
+    <p style="text-transform: uppercase">This is a countdown to my birthday.</p>
+  </div>
+
+  <!-- Loadscreen, opacity is manually put to 0 in index.js -->
+  <!-- <div id="loadscreen">
+    <div class="center-content dots">
+      <img src="https://s9.limitedrun.com/images/1466645/skelewalk.gif">
     </div>
+  </div> -->
+
+  <div id="timer">
+    <span>
+      <div id="countdown"></div>
+    </span>
+    <script type="text/javascript">
+      // Timer initialization
+      $("#countdown").countdown("11/28/2020", function (event) {
+        $(this).text(event.strftime("%D:%H:%M:%S"));
+      });
+    </script>
+  </div>
+
+  <aside class="flex-wrapper">
+    <div class="nav-overlay"></div>
+    <ul>
+      <li class="special-nav" style="transition-duration: 0.3s;">
+        <ul class="socials">
+          <!-- Socials, uses FontAwesome icons -->
+          <li><a href="https://www.instagram.com/KeanuPlayzYT"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://www.twitter.com/KeanuRAR"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://tumblr.keanucode.ml/"><i class="fab fa-tumblr"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCGFolmtneMB2DGChRq5MXTQ"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+      </li>
+
+      <li style="transition-duration: 0.6s;">
+        <!-- Items in the navbar -->
+        <a href="https://www.keanucode.ml/">Home</a>
+      </li>
+
+
+    </ul>
+
+    <!-- <span class="aside-footer"><a href="URL" target="_blank">Link 1</a> / <a
+        target="_blank" href="URL2">Link 2</a> / <a target="_blank"
+        href="URL3">Link 3</a></span> -->
+  </aside>
+
+  <!-- Top header with nav and logo -->
+  <header class="flex-wrapper">
+    <nav id="main-nav" class="flex-wrapper">
+      
+      <!-- menu -->
+      <span class="trigger-container">
+        <a href="#" id="nav-trigger" class="trigger btn-floating hover-bg-accent hover-cl-backing">
+          <i class="material-icons">menu</i>
+        </a>
+        <a href="#" id="nav-closer" class="trigger btn-floating bg-accent cl-backing hover-bg-backing">
+          <i class="material-icons hover-cl-body">close</i>
+        </a>
+      </span>
+      
+      <!-- logo -->
+      <a href="https://www.bd.keanucode.ml/" class="logo-link">
+        <h1 class="logo img-container flex-wrapper">
+          <img
+            src="clock.png"
+            alt="Clock">
+        </h1>
+      </a>
+
+      <!-- GH link -->
+      <span class="trigger-container">
+        <a href="https://github.com/keanuplayz/ua-countdown"
+          class="trigger btn-floating hover-bg-accent hover-cl-backing">
+          <i class="material-icons">source</i>
+        </a>
+      </span>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main id="loader" class="flex-wrapper" aria-live="polite">
+    <div class="loaded-content">
+      <div class="width-wrapper">
+        <!-- Countdown clock -->
+        <div id="inner-timer">
+          <span>
+            <span id="clock"></span>
+          </span>
+          <script type="text/javascript">
+            function formatDate(date) {
+              var d = new Date(date),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate(),
+                year = d.getFullYear();
+
+              if (month.length < 2)
+                month = '0' + month;
+              if (day.length < 2)
+                day = '0' + day;
+
+              return [year, month, day].join('/');
+            }
+
+            let currentDate = new Date();
+            let countdownDate = new Date(currentDate.getFullYear(), 11 - 1, 28, 0, 0, 0);
+            if (currentDate > countdownDate) {
+              countdownDate.setFullYear(countdownDate.getFullYear() + 1);
+            }
+            var formatted = formatDate(countdownDate);
+            $('#clock').countdown(formatted, function (event) {
+              $(this).html(event.strftime('%D:%H:%M:%S'));
+            });
+          </script>
+        </div>
+
+        <!-- Footer -->
+        <footer class="flex-wrapper">
+          <ul class="socials">
+            <!-- Socials, uses FontAwesome icons -->
+            <li><a href="https://www.instagram.com/KeanuPlayzYT"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.twitter.com/KeanuRAR"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://tumblr.keanucode.ml/"><i class="fab fa-tumblr"></i></a></li>
+            <li><a href="https://www.youtube.com/channel/UCGFolmtneMB2DGChRq5MXTQ"><i class="fab fa-youtube"></i></a></li>
+          </ul>
+          <!-- <div><a href="URL" target="_blank">Link 1</a> / <a target="_blank"
+              href="URL2">Link 2</a> / <a target="_blank"
+              href="URL3">Link 3</a></div> -->
+          <div>© 2020 keanucode. Inspired by <a href="http://www.unusannus.com/" target="_blank">Unus Annus</a>. Memento Mori.</div>
+        </footer>
 </body>
+
 </html>
